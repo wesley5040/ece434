@@ -27,11 +27,11 @@ Wesley Van Pelt - CM3289
     </tbody>
 </table>
 9. Try cleaning up togglegpio.sh and removing unneeded lines. Does it impact the period?
-    * Yes, less than half the overhead time.
+     * Yes, less than half the overhead time.
 10. togglegpio uses bash (first line in file). Try using sh. Is the period shorter?
-    * Yes, the togglegpio-before.sh is now 226ms and togglegpio-after.sh is 212ms.
+     * Yes, the togglegpio-before.sh is now 226ms and togglegpio-after.sh is 212ms.
 11. What's the shortest period you can get?
-    * 12ms using the togglegpio-after.sh with sh.
+     * 12ms using the togglegpio-after.sh with sh.
 
 | Sleep (ms) | Sh0 Per (ms) | Sh0 Proc. (%) | Sh1 Per (ms) | Sh1 Proc. (%) | Py Per (ms) | Py Proc (%) | C Per (ms) | C Proc (%) |
 | ---------- | ------------ | ------------- | ------------ | ------------- | ----------- | ----------- | ---------- | ---------- |
