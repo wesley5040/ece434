@@ -15,44 +15,42 @@ Wesley Van Pelt - CM3289
         <tr><th>Question</th> <th>Shell (before)</th> <th>Shell (after)</th> <th>Python</th> <th>C</th></tr>
     </thead>
     <tbody>
-        <tr><th>1. Min/Max voltage</th> <th>0.0/3.4</th> <th>0.0/3.4</th> <th>0.0/3.36</th> <th>Min/Max: x/x</th></tr>
-        <tr><th>2. Period</th> <th>240ms</th> <th>216ms</th> <th>200ms</th> <th>Xms</th></tr>
-        <tr><th>3. How close to 100ms</th> <th>+20ms</th> <th>+8ms</th> <th>+0ms</th> <th>x</th></tr>
-        <tr><th>4. Why do they differ?</th> <th colspan=4>...</th></tr>
-        <tr><th>5. htop processor usage</th> <th>20%</th> <th>11%</th> <th>3.5%</th> <th>x%</th></tr>
-        <tr><th>6a. Shortest period (table below)</th> <th>Xms</th> <th>Xms</th> <th>Xms</th> <th>Xms</th></tr>
-        <tr><th>6b. Shortest period proc usage</th> <th>Xms</th> <th>Xms</th> <th>Xms</th> <th>Xms</th></tr>
-        <tr><th>7. How stable?</th> <th>+/-10ms</th> <th>+/-10ms</th> <th>+/-0ms</th> <th>...</th></tr>
-        <tr><th>8. How stable when launching vim?</th> <th>Relatively</th> <th>Relatively</th> <th>More than bash</th> <th>...</th></tr>
+        <tr><th>1. Min/Max voltage</th> <th>0.0/3.4</th> <th>0.0/3.4</th> <th>0.0/3.36</th> <th>0.0/3.36</th></tr>
+        <tr><th>2. Period</th> <th>240ms</th> <th>216ms</th> <th>200ms</th> <th>200ms</th></tr>
+        <tr><th>3. How close to 100ms</th> <th>+20ms</th> <th>+8ms</th> <th>+0ms</th> <th>+0ms</th></tr>
+        <tr><th>4. Why do they differ?</th> <th colspan=4>The amount of overhead while running the language</th></tr>
+        <tr><th>5. htop processor usage</th> <th>20%</th> <th>11%</th> <th>3.5%</th> <th>3.2%</th></tr>
+        <tr><th>6a. Shortest period (table below)</th> <th>26ms</th> <th>12ms</th> <th>168us</th> <th>280us</th></tr>
+        <tr><th>6b. Shortest period proc usage</th> <th>100%</th> <th>100%</th> <th>100%</th> <th>71%</th></tr>
+        <tr><th>7. How stable?</th> <th>+/-10ms</th> <th>+/-10ms</th> <th>+/-0ms</th> <th>+/-0ms</th></tr>
+        <tr><th>8. How stable when launching vim?</th> <th>Relatively</th> <th>Relatively</th> <th>More than bash</th> <th>Completely</th></tr>
     </tbody>
 </table>
 9. Try cleaning up togglegpio.sh and removing unneeded lines. Does it impact the period?
     * Yes, less than half the overhead time.
 10. togglegpio uses bash (first line in file). Try using sh. Is the period shorter?
-    * TODO
+    * Yes, the togglegpio-before.sh is now 226ms and togglegpio-after.sh is 212ms.
 11. What's the shortest period you can get?
-    * TODO
+    * 12ms using the togglegpio-after.sh with sh.
 
 | Sleep (ms) | Sh0 Per (ms) | Sh0 Proc. (%) | Sh1 Per (ms) | Sh1 Proc. (%) | Py Per (ms) | Py Proc (%) | C Per (ms) | C Proc (%) |
 | ---------- | ------------ | ------------- | ------------ | ------------- | ----------- | ----------- | ---------- | ---------- |
-| 100        | x            | x             | x            | x             | x           | x           | x          | x          |
-| 75         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 50         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 40         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 30         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 25         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 20         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 15         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 10         | x            | x             | x            | x             | x           | x           | x          | x          |
-| 5          | x            | x             | x            | x             | x           | x           | x          | x          |
-| 3          | x            | x             | x            | x             | x           | x           | x          | x          |
-| 2          | x            | x             | x            | x             | x           | x           | x          | x          |
-| 1          | x            | x             | x            | x             | x           | x           | x          | x          |
-| 0.5        | x            | x             | x            | x             | x           | x           | x          | x          |
-| 0          | x            | x             | x            | x             | x           | x           | x          | x          |
+| 100        | 226          | 14            | 212          | 9             | 200         | 3.5         | 200        | 3.2        |
+| 50         | 125          | 25            | 112          | 12            | 100         | 3.5         | 100        | 3.2        |
+| 35         | 96           | 30            | 82           | 19            | 70          | 3.5         | 70         | 3.2        |
+| 25         | 76           | 36            | 62           | 24            | 50          | 3.5         | 50         | 3.6        |
+| 15         | 56           | 49            | 42           | 33            | 30          | 4           | 30         | 3.6        |
+| 10         | 46           | 59            | 32           | 39            | 20          | 5           | 20         | 4.0        |
+| 5          | 36           | 75            | 22           | 59            | 10          | 6           | 10         | 5.0        |
+| 3          | 32           | 83            | 18           | 71            | 6           | 15          | 6          | 6.0        |
+| 2          | 30           | 88            | 16           | 76            | 4           | 9           | 4          | 9.0        |
+| 1          | 28           | 94            | 14           | 88            | 2.36        | 17          | 2.30       | 6.3        |
+| 0.5        | 28           | 97            | 12           | 93            | 1.36        | 22          | 1.30       | 25         |
+| 0          | 26           | 100           | 12           | 100           | 0.168       | 100         | 0.28       | 71         |
+Note: The two shell ones are using sh instead of bash.
 
 ## Etch-a-sketch
+TODO
 
-## Other stuff
-### `togglegpio.py`
+## Files in this homework
 TODO
