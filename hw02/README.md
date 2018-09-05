@@ -49,8 +49,15 @@ Wesley Van Pelt - CM3289
 | 0          | 26           | 100           | 12           | 100           | 0.168       | 100         | 0.28       | 71         |
 Note: The two shell ones are using sh instead of bash.
 
+### New files for this part
+#### `togglegpio.py`
+##### Usage `bone# togglegpio.py <sleep time in seconds>`
+
 ## Etch-a-sketch
 TODO
 
-## Files in this homework
+## Extras
+### Modify `togglegpio.c`
+TODO
+### Modify `gpio-int-test.c`
 TODO
