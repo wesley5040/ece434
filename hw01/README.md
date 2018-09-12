@@ -30,3 +30,10 @@ Wesley Van Pelt - CM3289
 * To use a new terminal size you have to clear the screen.
 * Resizing the terminal to be smaller than where the cursor is, the program
   will exit.
+
+
+==========================
+Professor Yoder's comments
+Well done
+
+Score:  10/10
