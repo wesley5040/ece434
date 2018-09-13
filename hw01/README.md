@@ -32,8 +32,8 @@ Wesley Van Pelt - CM3289
   will exit.
 
 
-==========================
 Professor Yoder's comments
+==========================
 Well done
 
 Score:  10/10
