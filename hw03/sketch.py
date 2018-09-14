@@ -24,10 +24,21 @@ curses.cbreak()
 curses.curs_set(0)
 s.keypad(True)
 
+def get(b):
+    # Makes a binary string to OR with
+    return int(('0' * b) + '1' + ('0' * (7 - b)), 2)
+
+def mprint():
+    # Just writes the current column
+    global cx, cy
+    cols[cx] |= get(cy)
+    bus.write_i2c_block_data(matrix, cx * 2, [cols[cx]])
 
 def clear_scr():
     # Clears the grid
     bus.write_i2c_block_data(matrix, 0, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+    mprint()
+
 
 clear_scr()
 try:  # Need the try/except so terminal doesn't get left in a bad state
@@ -36,22 +47,18 @@ try:  # Need the try/except so terminal doesn't get left in a bad state
         if (c == curses.KEY_LEFT):
             if (cx > 0):
                 cx -= 1
-                cols[cx] += cy
         elif (c == curses.KEY_RIGHT):
             if (cx < w - 1):
                 cx += 1
-                cols[cx] += cy
         elif (c == curses.KEY_UP):
             if (cy > 0):
                 cy -= 1
-                cols[cy] += cx
         elif (c == curses.KEY_DOWN):
             if (cy < h - 1):
                 cy += 1
-                cols[cy] += cx
         elif (c == 114):  # R key
             clear_scr()
-        bus.write_i2c_block_data(matrix, cx * 2, [cols[cx]])
+        mprint()
 except:
     # Clean up and exit
     curses.nocbreak()
