@@ -1,28 +1,26 @@
 #!/usr/bin/env python3
-import curses, sys, smbus
+import sys, smbus, time
+from Adafruit_BBIO.Encoder import RotaryEncoder, eQEP1, eQEP2
 
 print("Etch-a-sketch on i2c screen")
 print("")
 print("Controls:")
-print("  Move up     :  Up arrow")
-print("  Move down   :  Down arrow")
-print("  Move left   :  Left arrow")
-print("  Move right  :  Right arrow")
-print("  Clear screen:  R key")
+print("  Move up     :  ")
+print("  Move down   :  ")
+print("  Move left   :  ")
+print("  Move right  :  ")
 print("  Exit        :  ^C")
 print("")
 
 h,  w  = 8, 8
 cy, cx = 3, 3
+ly, lx = 0, 0
 cols   = [0, 0, 0, 0, 0, 0, 0, 0]
 bus    = smbus.SMBus(2)
 matrix = 0x70
-
-s = curses.initscr()
-curses.noecho()
-curses.cbreak()
-curses.curs_set(0)
-s.keypad(True)
+e1, e2 = RotaryEncoder(eQEP1), RotaryEncoder(eQEP2)
+e1.setAbsolute()
+e2.setAbsolute()
 
 def get(b):
     # Makes a binary string to OR with
@@ -41,24 +39,21 @@ def clear_scr():
 
 
 clear_scr()
+e1.enable()
+e2.enable()
 try:  # Need the try/except so terminal doesn't get left in a bad state
     while True:
-        c = s.getch()  # Waits for the next keypress
-        if (c == curses.KEY_LEFT):
-            if (cx > 0):
-                cx -= 1
-        elif (c == curses.KEY_RIGHT):
-            if (cx < w - 1):
-                cx += 1
-        elif (c == curses.KEY_UP):
-            if (cy > 0):
-                cy -= 1
-        elif (c == curses.KEY_DOWN):
-            if (cy < h - 1):
-                cy += 1
-        elif (c == 114):  # R key
-            clear_scr()
+        dy, dx = ly - e1.position, lx - e2.position
+        if (dy > 3) and (cy < 7):  # go down
+            cy += 1
+        if (dy < 3) and (cy > 0):  # go up
+            cy -= 1
+        if (dx > 3) and (cx < 7):
+            cx += 1
+        if (dx < 3) and (cx > 0):
+            cx -= 1
         mprint()
+        time.sleep(0.1)
 except:
     # Clean up and exit
     curses.nocbreak()
