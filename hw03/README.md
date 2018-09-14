@@ -18,3 +18,6 @@ Example:  `bone# ./tmp101.sh 2 0x48 0x4a`
 #### Notes
  * Please ensure that i2c pins are in the correct mode before running.
  * You must provide all 3 args to the script
+
+
+## Etch-a-sketch
