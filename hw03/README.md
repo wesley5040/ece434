@@ -21,3 +21,14 @@ Example:  `bone# ./tmp101.sh 2 0x48 0x4a`
 
 
 ## Etch-a-sketch
+### [`sketch.py`](sketch.py)
+#### Usage
+`bone# ./sketch.py`
+##### Note
+You must run `exercises/sensors/eQEP/setup.sh` and set `P9_21/22` to i2c first.
+
+#### Setup
+ * Connect rotary encoders to `P8_33/35` and `P8_41/42`.
+ * Connect i2c matrix to `P9_21/22`.
+ * Run `exercises/sensors/eQEP/setup.sh`.
+ * Set `P9_21/22` to i2c.
