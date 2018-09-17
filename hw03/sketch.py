@@ -1,28 +1,27 @@
 #!/usr/bin/env python3
-import curses, sys, smbus
+import sys, smbus, time
+from Adafruit_BBIO.Encoder import RotaryEncoder, eQEP1, eQEP2
 
 print("Etch-a-sketch on i2c screen")
 print("")
 print("Controls:")
-print("  Move up     :  Up arrow")
-print("  Move down   :  Down arrow")
-print("  Move left   :  Left arrow")
-print("  Move right  :  Right arrow")
-print("  Clear screen:  R key")
+print("  Move up     :  ")
+print("  Move down   :  ")
+print("  Move left   :  ")
+print("  Move right  :  ")
 print("  Exit        :  ^C")
 print("")
 
 h,  w  = 8, 8
 cy, cx = 3, 3
+ly, lx = 0, 0
 cols   = [0, 0, 0, 0, 0, 0, 0, 0]
 bus    = smbus.SMBus(2)
 matrix = 0x70
+e1, e2 = RotaryEncoder(eQEP1), RotaryEncoder(eQEP2)
+e1.setAbsolute()
+e2.setAbsolute()
 
-s = curses.initscr()
-curses.noecho()
-curses.cbreak()
-curses.curs_set(0)
-s.keypad(True)
 
 def get(b):
     # Makes a binary string to OR with
@@ -41,28 +40,19 @@ def clear_scr():
 
 
 clear_scr()
-try:  # Need the try/except so terminal doesn't get left in a bad state
-    while True:
-        c = s.getch()  # Waits for the next keypress
-        if (c == curses.KEY_LEFT):
-            if (cx > 0):
-                cx -= 1
-        elif (c == curses.KEY_RIGHT):
-            if (cx < w - 1):
-                cx += 1
-        elif (c == curses.KEY_UP):
-            if (cy > 0):
-                cy -= 1
-        elif (c == curses.KEY_DOWN):
-            if (cy < h - 1):
-                cy += 1
-        elif (c == 114):  # R key
-            clear_scr()
-        mprint()
-except:
-    # Clean up and exit
-    curses.nocbreak()
-    s.keypad(False)
-    curses.echo()
-    curses.endwin()
-    exit()
+e1.enable()
+e2.enable()
+while True:
+    dy, dx = ly - e2.position, lx - e1.position
+    if (dy > 0) and (cy < 7):  # go down
+        cy += 1
+    if (dy < 0) and (cy > 0):  # go up
+        cy -= 1
+    if (dx > 0) and (cx < 7):  # go right
+        cx += 1
+    if (dx < 0) and (cx > 0):  # go left
+        cx -= 1
+    ly = e2.position
+    lx = e1.position
+    mprint()
+    time.sleep(0.1)
