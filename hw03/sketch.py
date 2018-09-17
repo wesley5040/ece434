@@ -22,7 +22,6 @@ e1, e2 = RotaryEncoder(eQEP1), RotaryEncoder(eQEP2)
 e1.setAbsolute()
 e2.setAbsolute()
 
-
 def get(b):
     # Makes a binary string to OR with
     return int(('0' * b) + '1' + ('0' * (7 - b)), 2)
