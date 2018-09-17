@@ -12,12 +12,12 @@ print("  Move right  :  eQEP1 clockwise")
 print("  Exit        :  ^C")
 print("")
 
-h,  w  = 8, 8
-cy, cx = 3, 3
-ly, lx = 0, 0
-cols   = [0, 0, 0, 0, 0, 0, 0, 0]
-bus    = smbus.SMBus(2)
-matrix = 0x70
+h,  w  = 8, 8                      # i2c matrix is 8x8
+cy, cx = 3, 3                      # starting cell is here
+ly, lx = 0, 0                      # last x and y for the encoders
+cols   = [0, 0, 0, 0, 0, 0, 0, 0]  # the 8 columns
+bus    = smbus.SMBus(2)            # use bus 2 for the encoders
+matrix = 0x70                      # matrix is on i2c address 0x70
 e1, e2 = RotaryEncoder(eQEP1), RotaryEncoder(eQEP2)
 e1.setAbsolute()
 e2.setAbsolute()
