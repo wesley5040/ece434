@@ -33,8 +33,8 @@ You must run `exercises/sensors/eQEP/setup.sh` and set `P9_21/22` to i2c first.
  * Run `exercises/sensors/eQEP/setup.sh`.
  * Set `P9_21/22` to i2c.
 
-========================
 Professor Yoder's Comments
+==========================
 
 Looks very good.  Nice and complete.
 Nice use of parameters on the temp script.
