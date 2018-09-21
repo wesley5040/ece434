@@ -73,8 +73,9 @@ Did not complete
 ### Modify `gpioThru.c`
 Did not complete
 
-========================
+
 Professor Yoder's Comments
+==========================
 
 Looks very good.  Nice and complete.
 
