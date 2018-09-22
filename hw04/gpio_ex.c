@@ -2,6 +2,7 @@
 
 void signal_handler(int sig)
 {
+	printf("Closing\n");
 	go = 0;
 }
 
@@ -30,15 +31,15 @@ int main(int argc, char *argv[])
 	gpio_sdo = gpio + GPIO_SETDATA_O;
 	gpio_cdo = gpio + GPIO_CLRDATA_O;
 
-
+	printf("Started\n");
 	for (; go; ) {
-		if (*gpio_din & GPIO_07)
-			*gpio_sdo = GPIO_02;
-		else
+		if (*gpio_din & GPIO_07){
+			*gpio_sdo = GPIO_02;printf("y");
+		}else
 			*gpio_cdo = GPIO_02;
-		if (*gpio_din & GPIO_20)
-			*gpio_sdo = GPIO_03;
-		else
+		if (*gpio_din & GPIO_05) {
+			*gpio_sdo = GPIO_03; printf("x");
+		}else
 			*gpio_cdo = GPIO_03;
 	}
 

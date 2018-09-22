@@ -27,6 +27,6 @@ void signal_handler(int sig);
 
 #define GPIO_02 (1<<2)
 #define GPIO_03 (1<<3)
+#define GPIO_05 (1<<5)
 #define GPIO_07 (1<<7)
-#define GPIO_20 (1<<20)
 #endif
