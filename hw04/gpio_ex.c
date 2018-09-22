@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
 {
 	volatile void         *gpio0;
 	volatile void         *gpio1;
+	volatile unsigned int *gpio0_din;
+	volatile unsigned int *gpio1_din;
 	volatile unsigned int *gpio0_sdo;
 	volatile unsigned int *gpio0_cdo;
 	int                    fd;
@@ -24,16 +26,18 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
+	gpio0_din = gpio0 + GPIO_DATA_I;
+	gpio1_din = gpio1 + GPIO_DATA_I;
 	gpio0_sdo = gpio0 + GPIO_SETDATA_O;
 	gpio0_cdo = gpio0 + GPIO_CLRDATA_O;
 
 	printf("Started\n");
 	for (; go; ) {
-		if (*(gpio0 + GPIO_DATA_I) & GPIO_07)
+		if (*gpio0_din & GPIO_07)
 			*gpio0_sdo = GPIO_02;
 		else
 			*gpio0_cdo = GPIO_02;
-		if (*(gpio1 + GPIO_DATA_I) & GPIO_48)
+		if (*gpio1_din & GPIO_48)
 			*gpio0_sdo = GPIO_03;
 		else
 			*gpio0_cdo = GPIO_03;
