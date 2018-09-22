@@ -16,7 +16,8 @@ Wesley Van Pelt - CM3289
 
 ## GPIO via mmap
 ### Setup/Compiling
-Run `make` (this also does pin configuration)
+ * Run `make` to compile.
+ * Run `make gpio` to set pins.
 
 ### [`gpio_ex.c`](gpio_ex.c)
 #### Usage
@@ -24,7 +25,7 @@ Run `make` (this also does pin configuration)
 #### I/O
 | Name    | Pin   |
 | ------- | ----- |
-| 1 sense | P9_41 |
+| 1 sense | P9_15 |
 | 1 out   | P9_21 |
 | 2 sense | P9_42 |
 | 2 out   | P9_22 |
