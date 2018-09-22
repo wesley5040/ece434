@@ -34,3 +34,5 @@ Wesley Van Pelt - CM3289
 #### Usage
 `bone# ./gpio_fast`
 #### I/O
+This toggles P9_21 as fast as possible.
+#### Times
