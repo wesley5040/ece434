@@ -36,3 +36,15 @@ Wesley Van Pelt - CM3289
 #### I/O
 This toggles P9_21 as fast as possible.
 #### Times
+This runs from 2.63-2.79MHz and changes within that range a lot.  The fastest I got in HW02 was about 3.5kHz, but this isn't very relevant since it was still using the sleep command, but for a time of 0.
+
+
+## TFT Screen
+### Boris
+`bone# fbi -noverbose -T 1 -a boris.png`
+
+### Tilted Boris
+Run `bone# ./reset-portrait.sh` and then the same command as before.
+
+### Video
+`bone# mplayer ...`
