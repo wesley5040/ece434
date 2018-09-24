@@ -41,10 +41,16 @@ This runs from 2.63-2.79MHz and changes within that range a lot.  The fastest I 
 
 ## TFT Screen
 ### Boris
+#### Normal
 `bone# fbi -noverbose -T 1 -a boris.png`
-
-### Tilted Boris
+#### Tilted
 Run `bone# ./reset-portrait.sh` and then the same command as before.
 
 ### Video
-`bone# mplayer ...`
+#### Normal
+`bone# mplayer -fs vid.mp4`
+#### Tilted
+Same process as tilted boris.
+
+### Text and Image
+`bone# ./tai.sh`
