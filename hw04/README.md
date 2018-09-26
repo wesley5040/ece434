@@ -54,3 +54,11 @@ Same process as tilted boris.
 
 ### Text and Image
 `bone# ./tai.sh`
+
+========================
+Professor Yoder's Comments
+
+Looks good.
+Did you try toggling without uslees()?
+
+Score:  10/10
