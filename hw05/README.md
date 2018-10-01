@@ -40,4 +40,4 @@ This address (0x21028) is in our data section
 ```
 
 ## Kernel Modules
-TODO
+All of the files for this part is in the [`kernel-stuff`](kernel-stuff) directory.
