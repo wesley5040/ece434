@@ -39,10 +39,10 @@ static irq_handler_t ebbgpio_irq_handler(unsigned int irq, void *dev_id, struct 
 static int __init ebbgpio_init(void)
 {
 	int result = 0;
-	printk(KERN_INFO, "GPIO_TEST: Initializing the GPIO_TEST LKM\n");
+	printk(KERN_INFO "GPIO_TEST: Initializing the GPIO_TEST LKM\n");
 	// Is the GPIO a valid GPIO number (e.g., the BBB has 4x32 but not all available)
 	if (!gpio_is_valid(gpioLED)) {
-		printk(KERN_INFO, "GPIO_TEST: invalid LED GPIO\n");
+		printk(KERN_INFO "GPIO_TEST: invalid LED GPIO\n");
 		return -ENODEV;
 	}
 

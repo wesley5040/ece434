@@ -39,10 +39,10 @@ static irq_handler_t ebbgpio_irq_handler(unsigned int irq, void *dev_id, struct 
 static int __init ebbgpio_init(void)
 {
 	int result = 0;
-	printk(KERN_INFO, "GPIO_TEST: Initializing the GPIO_TEST LKM\n");
+	printk(KERN_INFO "GPIO_TEST: Initializing the GPIO_TEST LKM\n");
 	// Is the GPIO a valid GPIO number (e.g., the BBB has 4x32 but not all available)
 	if (!gpio_is_valid(gpioLED)) {
-		printk(KERN_INFO, "GPIO_TEST: invalid LED GPIO\n");
+		printk(KERN_INFO "GPIO_TEST: invalid LED GPIO\n");
 		return -ENODEV;
 	}
 
@@ -67,7 +67,7 @@ static int __init ebbgpio_init(void)
 	// This next call requests an interrupt line
 	result = request_irq(irqNumber,                           // The interrupt number requested
 	                     (irq_handler_t) ebbgpio_irq_handler, // The pointer to the handler function below
-	                     IRQF_TRIGGER_BOTH,                   // Interrupt on rising edge (button press, not release)
+	                     0x3,                                 // Interrupt on both edges
 	                     "ebb_gpio_handler",                  // Used in /proc/interrupts to identify the owner
 	                     NULL);                               // The *dev_id for shared interrupt lines, NULL is okay
 
