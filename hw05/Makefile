@@ -88,6 +88,7 @@ app.x: app.o
 clean:
 	rm -rf *.o
 	rm -rf *.x
+	rm -rf *.out
 
 
 # -------------------------------------
