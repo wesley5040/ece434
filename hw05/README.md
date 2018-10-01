@@ -40,9 +40,10 @@ This address (0x21028) is in our data section
 ```
 
 ## Kernel Modules
-All of the files for this part is in the [`kernel-stuff`](kernel-stuff) directory.  Build modules using `bone# make`.
+Be in the [`kernel-stuff`](kernel-stuff) directory for this part.
 
 ### [`gpio_toggle.c`](kernel-stuff/gpio_toggle.c) and [`gpio_copy.c`](kernel-stuff/gpio_copy.c)
 #### Usage
+ * Build (both modules): `bone# make`
  * Load (both modules): `bone# make load`
  * Unload (both modules): `bone# make uload`
