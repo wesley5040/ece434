@@ -47,3 +47,10 @@ Be in the [`kernel-stuff`](kernel-stuff) directory for this part.
  * Build (both modules): `bone# make`
  * Load (both modules): `bone# make load`
  * Unload (both modules): `bone# make uload`
+
+========================
+Professor Yoder's Comments
+
+Looks very good.  Nice and complete.
+
+Score:  10/10
