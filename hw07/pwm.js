@@ -18,5 +18,3 @@ v0.on('write', function(param) {
     console.log('V0:', param[0]);
     b.analogWrite(LED0, param[0]);
 });
-
-b.attachInterrupt(button, toggle, b.CHANGE);
