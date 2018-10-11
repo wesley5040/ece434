@@ -2,10 +2,13 @@
 Wesley Van Pelt - CM3289
 
 ## Project
-TODO
+Done.
 
 ## Blynk
-It works.
+It worked.  I put merged it with the next part.
 
 ## A slider
-TODO
+Just run the [all.js](all.js) with node.  The slider uses pin V1.
+
+## Errors
+I had an odd network error that made it not work.  The console output is in [`blynk-error-output.txt`](blynk-error-output.txt)
