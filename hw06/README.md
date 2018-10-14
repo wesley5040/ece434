@@ -36,7 +36,7 @@ I added a project with my name.
 	* The amount of code executing in the hardirq mode is much smaller, so
 	  the non-critical IRQs can be interrupted by another critical IRQ
 
-========================
 Professor Yoder's Comments
+==========================
 
 Score:  10/10
