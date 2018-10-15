@@ -3,7 +3,7 @@ Wesley Van Pelt - CM3289
 
 ## 2.6 Blinking an LED
 * Max toggle speed:
-* Jitter:  
+* Jitter:
 * Stability:
 
 ## 5.3 PWM Generator
