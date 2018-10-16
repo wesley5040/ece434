@@ -9,9 +9,9 @@ Wesley Van Pelt - CM3289
 
 ## 5.3 PWM Generator
 ![Image2](readme-files/DS1Z_QuickPrint2.png)
-* Stability:
-* Std Dev.:
-* Jitter:
+* Stability: Constantly changes between 39.8MHz and 40.3MHz
+* Std Dev.: 192kHz
+* Jitter: Some
 
 ## 5.4 Controlling the PWM Frequency
 ![Image3](readme-files/DS1Z_QuickPrint3.png)
