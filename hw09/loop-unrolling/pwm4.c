@@ -28,7 +28,7 @@ void main(void)
 	/* Clear SYSCFG[STANDBY_INIT] to enable OCP master port */
 	CT_CFG.SYSCFG_bit.STANDBY_INIT = 0;
 
-#pragma UNROLL(8)
+#pragma UNROLL(4)
 	while (1) {
 		__R30 |= P8_43;
 		__R30 |= P8_44;
