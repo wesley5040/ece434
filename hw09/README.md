@@ -21,15 +21,16 @@ I'm not sure what's up with these waveforms, but it seems to be a result of havi
 ![Image3](readme-files/DS1Z_QuickPrint3.png)
 
 ![Image4](readme-files/DS1Z_QuickPrint4.png)
-* Highest frequency with 4 channels:
-* Jitter:
+* Highest frequency with 4 channels: 28.7MHz
+* Jitter: About the same as the previous part
+* P8_43 has a very odd waveform
 
 ## 5.5 Loop Unrolling for Better Performance
-![Image4](readme-files/DS1Z_QuickPrint5.png)
+![Image5](readme-files/DS1Z_QuickPrint5.png)
 
 ## 5.9 Reading an Input at Regular Intervals
-![Image5](readme-files/DS1Z_QuickPrint6.png)
+![Image6](readme-files/DS1Z_QuickPrint6.png)
 * Input latency:
 
 ## 5.10 Analog Wave Generator
-![Image6](readme-files/DS1Z_QuickPrint7.png)
+![Image7](readme-files/DS1Z_QuickPrint7.png)
