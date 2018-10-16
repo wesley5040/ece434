@@ -8,8 +8,10 @@ Wesley Van Pelt - CM3289
 * Stability: Very
 
 ## 5.3 PWM Generator
+I ended up using 40MHz instead of 50MHz since that was the closest I could get to it.
+
 ![Image2](readme-files/DS1Z_QuickPrint2.png)
-* Stability: Constantly changes between 39.8MHz and 40.3MHz
+* Stability: Constantly changes between 39.8MHz and 40.3MHz, but the average is 40MHz
 * Std Dev.: 192kHz
 * Jitter: Some
 
@@ -23,7 +25,7 @@ Wesley Van Pelt - CM3289
 
 ## 5.9 Reading an Input at Regular Intervals
 ![Image5](readme-files/DS1Z_QuickPrint5.png)
-Input latency:
+* Input latency:
 
 ## 5.10 Analog Wave Generator
 ![Image6](readme-files/DS1Z_QuickPrint6.png)
