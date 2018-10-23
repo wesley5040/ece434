@@ -54,6 +54,12 @@ Note that for this part I used pins P9_25 and P9_27 since I started getting pinm
 
 Files for this part: [`analog-wave-gen`](analog-wave-gen)
 
-Used pin P9_27.
+I used pin P9_27 with a sine wave with 10,000 time samples.
 
 ![Image7](readme-files/DS1Z_QuickPrint7.png)
+
+![Image8](readme-files/DS1Z_QuickPrint8.png)
+
+![Image9](readme-files/DS1Z_QuickPrint9.png)
+
+![Image10](readme-files/DS1Z_QuickPrint10.png)
