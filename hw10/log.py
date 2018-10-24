@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 import time
 import smbus
@@ -12,5 +12,5 @@ while True:
 	bus.write_i2c_block_data(addr, 0x92, com)
 	time.sleep(0.5)
 	data = bus.read_i2c_block_data(addr, 0x55, 32)
-	print(    "1: " + ((65536 * data[0] + 256 * data[1] + data[2])/1000) +
-	      "A;  2: " + ((65536 * data[3] + 256 * data[4] + data[5])/1000) + "A")
+	print(    "1: " + str((65536 * data[0] + 256 * data[1] + data[2])/1000) +
+	      "A;  2: " + str((65536 * data[3] + 256 * data[4] + data[5])/1000) + "A")
