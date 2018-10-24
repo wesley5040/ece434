@@ -63,3 +63,14 @@ I used pin P9_27 with a sine wave with 10,000 time samples.
 ![Image9](readme-files/DS1Z_QuickPrint9.png)
 
 ![Image10](readme-files/DS1Z_QuickPrint10.png)
+
+========================
+Professor Yoder's Comments
+
+I think your 'scope may be near its frequency limit. 
+It's odd you are getting a pinmux error on P9_29.
+Loop unrolling generally speeds up by a factor of 6.
+You need to zoom in more on the Analog waves to see the wave shape better.
+
+
+Score:  10/10
