@@ -64,8 +64,8 @@ I used pin P9_27 with a sine wave with 10,000 time samples.
 
 ![Image10](readme-files/DS1Z_QuickPrint10.png)
 
-========================
 Professor Yoder's Comments
+==========================
 
 I think your 'scope may be near its frequency limit. 
 It's odd you are getting a pinmux error on P9_29.
