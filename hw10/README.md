@@ -13,3 +13,14 @@ Here is the Sheets Link: [https://docs.google.com/spreadsheets/d/13Hi4m2UrfbVr5B
 I used the first 2 channels of my current monitor monitoring the hot and neutral lines going to a fan and output them to the console and the Google Sheet.
 
 ![setup image](setup.jpeg)
+
+========================
+Professor Yoder's Comments
+
+The timeline is rather course.
+
+Nice picture of the setup.
+
+Looks logged, but I don't see a plot.
+
+Score:  9/10
