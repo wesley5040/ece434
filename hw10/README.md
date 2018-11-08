@@ -14,8 +14,8 @@ I used the first 2 channels of my current monitor monitoring the hot and neutral
 
 ![setup image](setup.jpeg)
 
-========================
 Professor Yoder's Comments
+==========================
 
 The timeline is rather course.
 
